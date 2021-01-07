@@ -15,7 +15,9 @@ class PostsController < ApplicationController
 
   def delete
     @post = Post.find(params[:id])
-    @post.destroy
+    if @post.pw == params[:pw]
+      @post.destroy
+    end
     redirect_to "/posts/main"
   end
 end
