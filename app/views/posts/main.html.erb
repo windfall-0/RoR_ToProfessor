@@ -1,2 +1,15 @@
-<h1>Posts#main</h1>
-<p>Find me in app/views/posts/main.html.erb</p>
+<main id="main">
+  <h2 class="blind">글작성</h2>
+  <form action="/posts/create" method="POST" class="content-form">
+    <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token"/>
+    <div id="content-info">
+      <input type="text" required maxlength="10" placeholder="NAME" id="content-name" name="title"/>
+      <input type="password" placeholder="password" id="content-pw" name="pw"/>
+      <span>For delete</span>
+      <input type="submit" value="Write" id="content-submit"/>
+    </div>
+    <div id="content-content">
+      <textarea id="content-description" name="desc"></textarea>
+    </div>
+  </form>
+</main>

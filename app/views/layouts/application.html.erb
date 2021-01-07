@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>Guest Book</title>
+  <%= stylesheet_link_tag 'application',media: 'all', 'data-turbolinks-track' => true %>
+
+</head>
+<body>
+  <aside id="aside">
+    <div id="logo">
+      <h1 class="blind">To.Professor</h1>
+      <a href="/posts/main"><%= image_tag '3.png' %></a>
+    </div>
+    <section id="list">
+      <h2 class="blind">글목록</h2>
+      <div class="uplist">
+        <div class="time" id="uplistTime">
+          66.66.66<br>66:66
+        </div>
+        <div class="content" id="js-content">
+          <div class="id">
+            How To Use
+          </div>
+          <div class="preview">
+            About To.Professor
+          </div>
+        </div>
+      </div>
+      <% @postli.each do |post| %>
+      <a href="/posts/page/<%= post.id %>">
+        <div id="<%= post.id %>" class="uplist">
+          <div class="time">
+            <%= post.created_at.to_s[0..-7] %>
+          </div>
+          <div class="content" id="js-content">
+            <div class="id">
+              <%= post.title %>
+            </div>
+            <div class="preview">
+              <%= post.desc %>
+            </div>
+          </div>
+        </div>
+      </a>
+      <% end %>
+    </section>
+  </aside>
+
+  <%= yield %>
+
+    <div id="how-to-use" class="hide">
+      <span class="js-exit exit">✖</span>
+      <div class="howToUseText howToUseTitle">How To Use</div>
+      <div class="howToUseText">교수님께 방명록을 쓸 수 있는 공간입니다.</div>
+      <div class="howToUseText">좌상단 로고를 클릭 시 방명록을 쓰는 페이지로 넘어갑니다.</div>
+      <div class="howToUseText">글 작성시 본인의 이름과 암호를 입력 후 글을 작성합니다.</div>
+      <div class="howToUseText">암호는 글 삭제시 본인 확인 용도로 사용됩니다.</div>
+      <div class="howToUseText">글을 수정해야 한다면, 삭제 후 다시 작성하시면 됩니다.^^</div>
+    </div>
+</body>
+<%= javascript_include_tag 'application',media: 'all', 'data-turbolinks-track' => true %>
+</html>

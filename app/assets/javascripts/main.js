@@ -1,8 +1,8 @@
-const form = document.querySelector(".content-form")
-const inputPW = form.querySelector("#content-pw")
-const howToUse = document.querySelector("#how-to-use")
-const content = document.querySelector("#js-content")
-const exit = howToUse.querySelector(".js-exit")
+var form = document.querySelector(".content-form")
+var inputPW = form.querySelector("#content-pw")
+var howToUse = document.querySelector("#how-to-use")
+var content = document.querySelector("#js-content")
+var exit = howToUse.querySelector(".js-exit")
 function handleOpen() {
     howToUse.classList.remove("hide")
 }
