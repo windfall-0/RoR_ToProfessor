@@ -1,4 +1,4 @@
-# 이것이 무었인가?
+# 이것이 무엇인가?
 # To.Professor
 * 서버의 CRUD 기능 연습 방명록
 * 원본의 Ruby on Rails로의 이식!
